@@ -1,0 +1,68 @@
+body{
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+}
+
+div{
+    padding: 20px;
+    color: white;
+}
+
+
+.box1{
+    margin: 20px;
+    background-color: green;
+    display: inline-block;
+    transition: 1s
+}
+
+.box1:hover{
+    transform: rotate(10deg)
+}
+
+.box2{
+    margin: 20px;
+    display: inline-block;
+    background-color: green;
+}
+
+.box2:hover{
+    animation-duration: 2s;
+    animation-name: animation2;
+    animation-iteration-count: 1;
+}
+
+/* Chaining Animations */
+@keyframes animation2 {
+    0% {
+        background-color: red;
+    } 50% {
+        background-color: blue;
+    } 90% {
+        transform: rotate(10deg) translateY(100px);
+    }
+}
+
+.media-query-example{
+    margin: 20px;
+    display: inline-block;
+    background-color: green;
+}
+
+@media print{
+    .media-query-example{
+        background-color: red;
+    }
+}
+
+@media screen and (min-width:768px){
+    .media-query-example{
+        background-color: blueviolet;
+    }
+}
+
+@media screen and (max-width:768px){
+    .media-query-example{
+        background-color: blue;
+    }
+}
